@@ -16,29 +16,13 @@ library(httpuv)
 library(tm)
 library(wordcloud)
 library(stringr)
-Open Twiiter account
-Sign in to developer.twitter.com
-Application details
-Name: Unique
-Description: At least 10 characters
-Website: http://test.de/
-Cashback URL: empty
-API has been created.
-API key
-API server
-Access Token
-Access Token Secret
-Other info:
-Owner
-Owner ID
 "
 options(stringsAsFactors = FALSE)
 
 "
-consumer_key <- 'your key'
-consumer_secret <- 'your access'
-access_token <- 'your access token'
-access_secret <- 'your access secret'
+In cred_file
+consumer_key  consumer_secret access_token  access_secret
+'your key'  'your access' 'your access token' 'your access secret' 
 "
 #read.table reads csv and delimited files
 oauthCreds = read.table(cred_file,header=TRUE)
@@ -92,4 +76,3 @@ head(tdm_term_freq_df,10)
 
 wordcloud(words=tdm_term_freq_df$word,freq=tdm_term_freq_df$freq,min.freq = 8, max.words = 300, random.order = FALSE, rot.per = 0.35, colors = brewer.pal(8,'Dark2'),
           scale=c(3,0.5))
-#homework- add stop words that are not required- customisation
